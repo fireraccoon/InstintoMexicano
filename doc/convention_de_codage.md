@@ -1,6 +1,5 @@
 
 
-
 CONVENTION  DE NOMMAGE
 ======================
 Toutes variables, fonctions, attributs et méthodes
