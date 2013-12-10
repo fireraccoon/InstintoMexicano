@@ -1,5 +1,4 @@
 
-
 CONVENTION  DE NOMMAGE
 ======================
 Toutes variables, fonctions, attributs et méthodes
@@ -76,8 +75,9 @@ FICHIER ENTÊTE
 ==============
 tous les fichiers d'entête doivent contenir l'extension .hpp.
 
-#define GUARD
+"#define" GUARD
 --------------
+
 le format des #define guards doit être : <DOSSIER_COURANT>_<FICHIER>_HPP
 
 Les nom de variables, fonctions, classes, méthodes et attributs
