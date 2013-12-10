@@ -1,4 +1,3 @@
-
 CONVENTION  DE NOMMAGE
 ======================
 Toutes variables, fonctions, attributs et méthodes
@@ -17,11 +16,14 @@ VARIABLES BOOLÉENNES ET FONCTIONS BOOLÉENNES.
 ----------------------------------------------
 Le nom des variables booléennes doivent répondre à une question afin de mieux les reconnaître dans le code en utilisant les préfixe is, has.
 Par exemple, la fonction retournant si le personnage d'un jeu est mort ou nom devrait être:
+```
 	personnage.isDead();
+```
 
 Dans le cas ou un personnage possèderait un objet ou non on obtiendrait:
+```
 	personnage.hasGun();
-
+```
 
 
 NOMS DE FICHIER
@@ -36,30 +38,37 @@ suivre le upper CamelCase. Ainsi ils commencent tous par une Majuscule et avoir 
 majuscule pour chaque nouveau mot. Aucune utilisation de underscore(_).
 
 ex: 
+```
 class  Position { ...
 class  MenuTitre{ ...
 sturct InformationPerso{ ...
+```
 
 NOMS DE CONSTANTES
 ------------------
 les constantes devraient toujours être en MAJUSCULE et spéraée par des underscore (_) pour chaque mot.
-ex: const int WINDOW_HEIGHT=800, WINDOW_WIDTH=600;
+ex:
+```
+const int WINDOW_HEIGHT=800, WINDOW_WIDTH=600;
+```
 
 ESPACES DE NOMS
 ---------------
 
 les espaces de noms devraient toujours être en minuscule et séprarés par 
 des underscore (_) pour chaque mot:
-example: badass_motherfucker
-
+example: 
+```
+badass_motherfucker
+```
 
 ENUMÉRATEUR
 -----------
 Les élément d'un enum devraient toujours êter en majuscule et spéarés par des underscore (_) 
 ex.:
-
+```
 enum Color { RED, ORANGE, BLUE, YELLOW }
-
+```
 
 
 
@@ -73,7 +82,7 @@ enum Color { RED, ORANGE, BLUE, YELLOW }
 
 FICHIER ENTÊTE
 ==============
-tous les fichiers d'entête doivent contenir l'extension .hpp.
+tous les fichiers d'entête doivent contenir l'extension ".hpp".
 
 "#define" GUARD
 --------------
@@ -142,8 +151,9 @@ Utiliser 0 pour les entiers, 0.0 pour les nombre réels et '\0' pour les chars.
 Float
 ------
 toujours suffixer les float par f 
+```
 ex: float var = 5.0f;
-
+```
 
 COMMENTAIRES
 -------------
@@ -154,8 +164,7 @@ Ne pas avoir peur de mettre des commentaires expliquant des attributs et des fon
 Commentaire de fichier
 ----------------------
 Tous les fichiers devraient avoir en entête par ceci:
-
-
+```
 /////////////////////////////////////////////////////////////////////////////////
 //  
 //  Nom du Projet
@@ -168,7 +177,7 @@ Tous les fichiers devraient avoir en entête par ceci:
 //
 //
 /////////////////////////////////////////////////////////////////////////////////
-
+```
 
 COMMENTAIRE TODO
 ----------------
