@@ -28,7 +28,7 @@ Dans le cas ou un personnage possèderait un objet ou non on obtiendrait:
 
 NOMS DE FICHIER
 ---------------
-les fichiers doivent toujours être écrits en minuscule.
+les fichiers doivent suivre la convention pour les Classes
 
 
 NOMS DE TYPE
@@ -114,6 +114,16 @@ Les struct ne doivent être utilisées seulement dans la cas d'objets passifs (i
 dans les autres cas, on utilise des classes.
 
 
+ATTRIBUTS
+---------
+Les attributs doivent toujours être préfixer de " m_"
+example:
+```
+float m_healt;
+
+```
+
+
 
 ENCAPSULATION
 --------------
@@ -168,15 +178,28 @@ Tous les fichiers devraient avoir en entête par ceci:
 /////////////////////////////////////////////////////////////////////////////////
 //  
 //  Nom du Projet
-//  Copyright (C) ANNÉE Team G.O.A.T
-//  DESCRIPTION DE LA LICENCE
+//  Copyright (C) 2013 Team G.O.A.T
+//  This program is free software; you can redistribute it and/or
+//  modify it under the terms of the GNU General Public License
+//	as published by the Free Software Foundation; either version 2
+//	of the License, or (at your option) any later version.
+//
+//	This program is distributed in the hope that it will be useful,
+//	but WITHOUT ANY WARRANTY; without even the implied warranty of
+//	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//	GNU General Public License for more details.
+//
+//	You should have received a copy of the GNU General Public License
+//	along with this program; if not, write to the Free Software
+//	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //  
-//  Nom:	Nom du fichier
-//  Autheur:	AUtheur principal
+//  Nom:    	 Nom du fichier
+//  Autheur:     Auteurs
 //  Description: Une description du contenu du fichier
 //
 //
 /////////////////////////////////////////////////////////////////////////////////
+
 ```
 
 COMMENTAIRE TODO
