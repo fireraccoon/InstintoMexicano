@@ -194,7 +194,7 @@ Tous les fichiers devraient avoir en entête par ceci:
 //	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //  
 //  Nom:    	 Nom du fichier
-//  Autheur:     Auteurs
+//  Auteur:     Auteurs
 //  Description: Une description du contenu du fichier
 //
 //
