@@ -6,10 +6,7 @@ int Weapons::getRemainingAmmo()
 }
 bool Weapons::canShoot()
 {
-	if (m_ammo > 0)
-		return true;
-	else
-		return false;
+	return (m_ammo > 0);
 }
 void Weapons::shoot()
 {
