@@ -28,7 +28,7 @@ Dans le cas ou un personnage possèderait un objet ou non on obtiendrait:
 
 NOMS DE FICHIER
 ---------------
-les fichiers doivent toujours être écrits en minuscule.
+les fichiers doivent suivre la convention pour les Classes
 
 
 NOMS DE TYPE
@@ -112,6 +112,16 @@ CLASS vs STRUCT
 ---------------
 Les struct ne doivent être utilisées seulement dans la cas d'objets passifs (i.e qui n'ont aucun comportement) qui ne font que contenir des données, 
 dans les autres cas, on utilise des classes.
+
+
+ATTRIBUTS
+---------
+Les attributs doivent toujours être préfixer de " m_"
+example:
+```
+float m_healt;
+
+```
 
 
 
