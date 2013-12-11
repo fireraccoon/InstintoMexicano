@@ -16,23 +16,48 @@
 //	along with this program; if not, write to the Free Software
 //	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //  
-//  Nom:    	 InstintoMexicano
-//  Autheur:     Team G.O.A.T
-//  Description: The game's main entry poitn
+//  Nom:    	 Position
+//  Autheur:     Cesare James
+//  Description: A class managing a character
 //
 //
 /////////////////////////////////////////////////////////////////////////////////
-#include <iostream>
 
-#include <SFML/Graphics.hpp>
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP 
+
+#include <vector>
 
 
+#include "GameObject.h"
+#include "Weapons.h"
 
-
-int main()
+class Character : public GameObject
 {
-	
-	sf::CircleShape shape(100.f);
+public:
+	Character(std::string name);
+	~Character();
 
-	return 0;
-}
+
+private:
+	std::string m_name;			//The caracter's name
+	std::string m_teamName;		//The name of the character's team
+
+
+
+	// Movement
+	float m_weight; //trapu
+	float m_speedX;
+	float m_speedY;
+	std::vector<Weapon> m_weapons;
+
+
+
+
+
+
+
+};
+
+
+#endif
