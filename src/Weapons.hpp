@@ -5,9 +5,9 @@ class Weapon
 		int getRemainingAmmo();
 		bool canShoot();
 		void shoot();
-		
+
 	private:
 		std::string name;
-		float fireRate, damage, accuracy, range;
-		int ammo;
+		float m_fireRate, m_damage, m_accuracy, m_range;
+		int m_ammo;
 };
