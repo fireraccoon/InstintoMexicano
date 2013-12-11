@@ -76,8 +76,12 @@ class Character
 {
 	public:
 		Character(std::string name);
+		void shoot();
+		Position move(char direction, int facteur);
+
 
 	private:
+		std::string name;
 		float m_weight, m_height;
 		Position m_position;
 		Weapon m_weapon;
