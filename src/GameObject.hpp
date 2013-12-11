@@ -17,7 +17,7 @@
 //	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //  
 //  Nom:    	 GameObject
-//  Autheur:     Cesare James
+//  Auteur:     Cesare James
 //  Description: Contains a base class for all game objects.
 //
 //
