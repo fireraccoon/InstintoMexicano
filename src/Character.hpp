@@ -16,22 +16,13 @@
 //        along with this program; if not, write to the Free Software
 //        Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
-// Nom:          Position
-// Autheur: Cesare James
-// Description: A class managing a character
-// Nom:                  Character
-// Auteur:                 Mixbo
+// Nom:          	Character
+// Auteur: 		Cesare James && Mixbo
 // Description:         A class managing the character and its attributes
 //	You should have received a copy of the GNU General Public License
 //	along with this program; if not, write to the Free Software
 //	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //  
-//  Nom:    	 Position
-//  Autheur:     Cesare James
-//  Description: A class managing a character
-//  Nom:    	 	Character
-//  Auteur: 		Mixbo
-//  Description: 	A class managing the character and its attributes
 //
 //
 /////////////////////////////////////////////////////////////////////////////////
