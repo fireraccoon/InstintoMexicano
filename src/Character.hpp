@@ -63,32 +63,5 @@ private:
 
 
 #endif
-	Character(std::string name);
-	~Character();
-	
-	/* METHODS */
-	void shoot();
-	Position move(char direction, int facteur);
 
-
-private:
-	std::string m_name;		//The caracter's name
-	std::string m_teamName;		//The name of the character's team
-
-
-
-	// Movement
-	float m_weight; //trapu
-	float m_speedX;
-	float m_speedY;
-	std::vector<Weapon> m_weapons;
-
-
-
-
-
-};
-
-
-#endif
 
