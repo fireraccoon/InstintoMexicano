@@ -16,20 +16,16 @@
 //	along with this program; if not, write to the Free Software
 //	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //  
-<<<<<<< HEAD
 //  Nom:    	 Position
 //  Autheur:     Cesare James
 //  Description: A class managing a character
-=======
 //  Nom:    	 	Character
 //  Auteur: 		Mixbo
 //  Description: 	A class managing the character and its attributes
->>>>>>> 1ee550f760fd293391df8beecde24889dda23191
 //
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP 
 
@@ -44,10 +40,14 @@ class Character : public GameObject
 public:
 	Character(std::string name);
 	~Character();
+	
+	/* METHODS */
+	void shoot();
+	Position move(char direction, int facteur);
 
 
 private:
-	std::string m_name;			//The caracter's name
+	std::string m_name;		//The caracter's name
 	std::string m_teamName;		//The name of the character's team
 
 
@@ -62,28 +62,8 @@ private:
 
 
 
-
-
 };
 
 
 #endif
-=======
-#include Position.cpp
-#include Weapon.cpp
 
-class Character
-{
-	public:
-		Character(std::string name);
-		void shoot();
-		Position move(char direction, int facteur);
-
-
-	private:
-		std::string name;
-		float m_weight, m_height;
-		Position m_position;
-		Weapon m_weapon;
-};
->>>>>>> 1ee550f760fd293391df8beecde24889dda23191
