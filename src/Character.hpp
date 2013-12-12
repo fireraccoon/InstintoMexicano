@@ -63,7 +63,6 @@ private:
 
 
 #endif
-=======
 	Character(std::string name);
 	~Character();
 	
