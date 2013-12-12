@@ -36,7 +36,7 @@ public:
    	* Draws the gameobject on screen
    	*/
 	virtual void draw() =0;
-
+	virtual Position move() =0;
 
 
 
