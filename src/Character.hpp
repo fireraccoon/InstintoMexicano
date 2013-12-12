@@ -7,6 +7,7 @@
 //        as published by the Free Software Foundation; either version 2
 //        of the License, or (at your option) any later version.
 //
+<<<<<<< HEAD
 //        This program is distributed in the hope that it will be useful,
 //        but WITHOUT ANY WARRANTY; without even the implied warranty of
 //        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
@@ -22,6 +23,18 @@
 // Nom:                  Character
 // Auteur:                 Mixbo
 // Description:         A class managing the character and its attributes
+=======
+//	You should have received a copy of the GNU General Public License
+//	along with this program; if not, write to the Free Software
+//	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+//  
+//  Nom:    	 Position
+//  Autheur:     Cesare James
+//  Description: A class managing a character
+//  Nom:    	 	Character
+//  Auteur: 		Mixbo
+//  Description: 	A class managing the character and its attributes
+>>>>>>> f7e9385b9678fad169ef947e3e82e3a48bbbc02d
 //
 //
 /////////////////////////////////////////////////////////////////////////////////
@@ -38,6 +51,7 @@
 class Character : public GameObject
 {
 public:
+<<<<<<< HEAD
         Character(std::string name);
         ~Character();
         
@@ -62,3 +76,34 @@ private:
 
 
 #endif
+=======
+	Character(std::string name);
+	~Character();
+	
+	/* METHODS */
+	void shoot();
+	Position move(char direction, int facteur);
+
+
+private:
+	std::string m_name;		//The caracter's name
+	std::string m_teamName;		//The name of the character's team
+
+
+
+	// Movement
+	float m_weight; //trapu
+	float m_speedX;
+	float m_speedY;
+	std::vector<Weapon> m_weapons;
+
+
+
+
+
+};
+
+
+#endif
+
+>>>>>>> f7e9385b9678fad169ef947e3e82e3a48bbbc02d

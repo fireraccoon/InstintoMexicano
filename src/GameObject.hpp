@@ -40,7 +40,7 @@ public:
 
 
 
-private:
+protected:
 	float m_height;	//It's height
 	float m_width;	//It's width
 	float m_posX;	//It's position in x
