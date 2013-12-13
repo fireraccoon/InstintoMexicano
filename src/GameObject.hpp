@@ -17,7 +17,7 @@
 //	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //  
 //  Nom:    	 GameObject
-//  Auteur:     Cesare James
+//  Auteur:      Cesare James
 //  Description: Contains a base class for all game objects.
 //
 //
@@ -29,8 +29,8 @@
 /*SFML INCLUDE */
 #include <SFML\Graphics.hpp>
 
-/* SFML */
-#include "Position.hpp"
+/* PROJECT INCLUDE */
+
 
 class GameObject : public sf::Drawable, sf::Transformable
 {
