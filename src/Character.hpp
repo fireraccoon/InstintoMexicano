@@ -58,6 +58,7 @@ public:
         float getSpeedY();
         std::vector<Weapons> getWeapons();
         Weapon* getUsedWeapon();
+        float getHealthPoints();
         
 
 
@@ -65,8 +66,13 @@ private:
         std::string m_name;       //The caracter's name
         std::string m_teamName;   //The name of the character's team
 
+        float m_healthPoints;      //Health Points
+
 
         bool m_isGrounded;        //Whether the character is grounded or not
+        
+        
+        
         
         // Movement
         float m_weight; //trapu
