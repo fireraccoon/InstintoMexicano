@@ -26,7 +26,13 @@
 #ifndef GAME_OBJECT_HPP
 #define GAME_OBJECT_HPP
 
-class GameObject
+/*SFML INCLUDE */
+#include <SFML\Graphics.hpp>
+
+/* SFML */
+#include "Position.hpp"
+
+class GameObject : public sf::Drawable, sf::Transformable
 {
 public:
 	GameObject(arguments);
@@ -41,10 +47,24 @@ public:
 
 
 protected:
-	float m_height;	//It's height
-	float m_width;	//It's width
-	float m_posX;	//It's position in x
-	float m_posY;	//It's position in y
+	float m_height;		 //It's height
+	float m_width;		 //It's width
+	
+	sf::Vector2f m_position; //The GameObject position
+	
+	sf::FloatRect m_boundingBox; //The GameObject boundingBox
+	
+	
+	sf::Sprite m_sprite*;	//We use a pointer since all the sprites are in the contained by SpriteManager
+	float m_currentFrame;	//The current Frame
+	
+	
+	
+	
+	
+	
+	
+	
 
 };
 #endif
