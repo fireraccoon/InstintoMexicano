@@ -35,6 +35,11 @@
 class GameObject : public sf::Drawable, sf::Transformable
 {
 public:
+	//Mvnt Direction
+	enum Direction {UP,DOWN,LEFT,RIGHT};
+	
+	/* ctor & dtor */
+
 	GameObject(arguments);
 	~GameObject();
 
@@ -43,6 +48,10 @@ public:
    	*/
 	virtual void draw() =0;
 	virtual Position move() =0;
+	/*
+	* Handles the collisions with the other GameObjects
+	*/
+	virtual void collision() =0;
 
 
 
@@ -59,12 +68,7 @@ protected:
 	float m_currentFrame;	//The current Frame
 	
 	
-	
-	
-	
-	
-	
-	
+
 
 };
 #endif
