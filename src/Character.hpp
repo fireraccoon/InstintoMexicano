@@ -28,6 +28,11 @@
 
 #include <vector>
 
+/* SFML INCLUDES*/
+#include <SFML/Graphics.hpp>
+
+
+/* PROJECT INCLUDES */
 
 #include "GameObject.h"
 #include "Weapons.h"
@@ -41,18 +46,34 @@ public:
         /* METHODS */
         void shoot();
         Position move(char direction, int facteur);
+        
+        
+        
+        /* GETTERS & SETTERS*/
+        std::string getName();
+        std::string getTeamName();
+        bool isGrounded();
+        float getWight();
+        float getSpeedX();
+        float getSpeedY();
+        std::vector<Weapons> getWeapons();
+        Weapon* getUsedWeapon();
+        
 
 
 private:
-        std::string m_name;                //The caracter's name
-        std::string m_teamName;            //The name of the character's team
+        std::string m_name;       //The caracter's name
+        std::string m_teamName;   //The name of the character's team
 
 
+        bool m_isGrounded;        //Whether the character is grounded or not
+        
         // Movement
         float m_weight; //trapu
         float m_speedX;
         float m_speedY;
-        std::vector<Weapon> m_weapons;
+        std::vector<Weapon> m_weapons;  //The arsenal of the character
+        Weapon  m_usedWeapon;         //The currently used weapon 
 
 
 };
