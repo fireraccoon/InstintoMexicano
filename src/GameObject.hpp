@@ -64,7 +64,7 @@ protected:
 	sf::FloatRect m_boundingBox; //The GameObject boundingBox
 	
 	
-	sf::Sprite m_sprite*;	//We use a pointer since all the sprites are in the contained by SpriteManager
+	sf::Sprite m_sprite*;	//We use a pointer since all the sprites are contained by SpriteManager
 	float m_currentFrame;	//The current Frame
 	
 	
