@@ -6,8 +6,8 @@ Les noms doivent tous décrire précisément à quoi la donnée se réfère.
 
 Toutes les variables doivent contenir un minimum de 4 lettres sauf pourles itérateurs et coordonées.
 
-LANGUES
--------
+## LANGUES
+
 Le code devrait toujours être écrit en Anglais.
 
 
