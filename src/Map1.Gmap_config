@@ -1,0 +1,20 @@
+
+#####################################
+#
+# A Map configuration file
+#
+#####################################
+
+name=first map
+height= 6
+width= 26
+tileset= ts.png
+tile_size=64
+data_file=Map1.Gmap_data
+
+
+
+# Tile number config
+1_is_solid=true
+2_is_solid=true
+3_is_solid=true

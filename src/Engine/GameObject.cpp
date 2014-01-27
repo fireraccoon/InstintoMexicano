@@ -16,56 +16,13 @@
 //        along with this program; if not, write to the Free Software
 //        Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //  
-//  Nom:             Position
-//  Auteur:     Cesare James
-//  Description: A class managing a position
+//  Nom:         GameObject
+//  Auteur:      Cesare James
+//  Description: Base class for all game objects.
 //
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-class Position
-{
-public:
-
-        Position(float x, float y);
-        ~Position();
+#include "GameObject.hpp"
 
 
-		/* METHODS */
-
-		bool equals(Position b);
-
-		/*
-		* Add a certain amount to a coordinate point
-		*/
-		void addX(float amount);
-		void addY(float amount);
-		/*
-		* Add a certain amount both to X and Y
-		*/
-		void add(float amount);
-
-		/*
-		* Substract a certain amount to a coordinate point
-		*/
-		void substractX(float amount);
-		void substractY(float amount);
-
-		/*
-		* substract a certain amount both to X and Y
-		*/
-		void substract(float amount);
-
-        /* GETTERS & SETTERS */
-        float getX();
-        float getY();
-        void  setX(float x);
-        void  setY(float y);
-        void  set(float x, float y);
-
-
-private:
-        float m_x;
-        float m_y;
-
-};
