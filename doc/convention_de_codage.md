@@ -1,5 +1,9 @@
-CONVENTION  DE NOMMAGE
+CONVENTION  DE CODAGE
 ======================
+
+
+NOMMAGE
+--------
 Toutes variables, fonctions, attributs et méthodes
 doivent repsecter le camelCase. Ex: viePersonnage.
 Les noms doivent tous décrire précisément à quoi la donnée se réfère.
