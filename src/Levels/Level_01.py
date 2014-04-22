@@ -5,8 +5,10 @@ from GameObjects.Characters import Player, Ennemy
 from GameObjects.Characters.El_Mercenario import Mercenario
 from GameObjects.Platform import Platform
 from Colors import Colors
-from ViewPort import ViewPort
-from States.PauseGameState import PauseGameState
+
+from States.PauseGameState import PauseGameGameState
+
+
 
 from Level import Level as Lvl
 

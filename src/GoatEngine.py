@@ -1,3 +1,5 @@
+from abc import ABCMeta
+from abc import abstractmethod
 import pygame
 
 
@@ -65,7 +67,7 @@ class Engine():
 
 
     def popState(self):
-        """  Kills the current state and switch to the las one remaining if any """
+        """  Kills the current state and switch to the last one remaining if any """
         if self.states:
             self.states[-1].cleanUp(self)
             self.states.pop()
@@ -104,3 +106,35 @@ class Engine():
             self.clock.tick(60)
 
         pygame.quit()
+
+
+class GameState():
+    __metaclass__ = ABCMeta
+
+    def __init__(self):
+      pass
+
+    @abstractmethod
+    def init(self, engine):
+        pass
+
+    @abstractmethod
+    def handleEvents(self, engine, events):
+        pass
+
+    @abstractmethod
+    def update(self, engine):
+        pass
+    @abstractmethod
+    def draw(self, engine):
+        pass
+
+    # These are default behaviors, so no need to make them abstract #
+    def cleanUp(self, engine):
+        pass
+
+    def resume(self, engine):
+        pass
+
+    def pause(self, engine):
+        pass

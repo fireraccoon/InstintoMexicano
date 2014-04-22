@@ -1,11 +1,13 @@
-from Colors import Colors
-from State import State
+
 
 import pygame
+import Colors
+from GoatEngine import GameState
 
-class PauseGameState(State):
+
+class PauseGameGameState(GameState):
     def __init__(self, sprites):
-        State.__init__(self)
+        GameState.__init__(self)
         self.sprites = sprites
 
 

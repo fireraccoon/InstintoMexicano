@@ -1,12 +1,13 @@
 # A Level is a specialised State
+from abc import abstractmethod
 import pygame
-from States import State
+from GoatEngine import GameState
 from ViewPort import ViewPort
 
 
-class Level(State.State):
+class Level(GameState):
     def __init__(self):
-        State.State.__init__(self)
+        GameState.__init__(self)
 
         self.sprites = pygame.sprite.Group()  # A Pygame Group of all the sprites to draw
 
@@ -23,21 +24,25 @@ class Level(State.State):
         self.viewport = ViewPort(350, 450, 100, 450)
 
 
-    def init(self, engine):
-        pass
-
 
     def shiftWorld(self, shift_x, shift_y):
         for sprite in self.sprites:
             sprite.rect.x += shift_x
             sprite.rect.y += shift_y
 
+    @abstractmethod
+    def init(self, engine):
+        pass
+
+    @abstractmethod
     def handleEvents(self, engine, events):
         pass
 
+    @abstractmethod
     def update(self, engine):
         pass
 
+    @abstractmethod
     def draw(self, engine):
         pass
 
