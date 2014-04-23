@@ -3,7 +3,7 @@
 
 
 from GoatEngine import Engine
-from Levels.Level_01 import Level
+from Levels.Level_02 import Level
 
 
 

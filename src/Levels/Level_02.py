@@ -6,14 +6,15 @@ from GameObjects.Characters.El_Mercenario import Mercenario
 from GameObjects.Platform import Platform
 from Colors import Colors
 from ViewPort import ViewPort
-from States.PauseGameState import PauseGameState
-import Level as L
+
+from Level import Level as Lvl
 from util import getAngle
-from States.State import State
 
+from States.PauseGameState import PauseGameGameState
 
-class Level(State):
+class Level(Lvl):
     def __init__(self):
+        Lvl.__init__(self)
         # GameObjects
         self.sprites = None  # A Pygame Group of all the sprites to draw
         self.moving_sprites = None  # A Pygame Group of all the movable sprites

@@ -40,4 +40,4 @@ class ViewPort(object):
             player.rect.y = self.min_y
             shift_y = diff
 
-        level.shift_world(shift_x, shift_y)
+        level.shiftWorld(shift_x, shift_y)
