@@ -4,6 +4,7 @@ from Colors import Colors
 from GameObjects.Direction import Direction
 
 from GameObjects.Gun import Gun
+from GameObjects.GrenadeLauncher import GrenadeLauncher
 
 
 from GameObjects.MovingObject import MovingObject
@@ -41,6 +42,9 @@ class Player(MovingObject):
         self.weapon = Gun()
         self.weapon.shootingDelay = 0 # No delay for the player
 
+        self.weapon2 = GrenadeLauncher()
+        self.weapon2.shootingDelay = 0
+
         # POINTS #
         self.hp = 100
         self.isDead = False
@@ -76,6 +80,19 @@ class Player(MovingObject):
         if self.isDead:
             return # We can't shoot if we are dead
         p = self.weapon.shoot(self, angle)
+        if p:
+            p.rect.x = self.rect.x+self.width
+            p.rect.y = self.rect.y
+            if self.direction == Direction.RIGHT:
+                p.rect.x = self.rect.x+self.width
+            else:
+                p.rect.x = self.rect.x
+        return p
+
+    def secondaryShoot(self, angle):
+        if self.isDead:
+            return
+        p = self.weapon2.shoot(self, angle)
         if p:
             p.rect.x = self.rect.x+self.width
             p.rect.y = self.rect.y

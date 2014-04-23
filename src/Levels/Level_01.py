@@ -78,6 +78,15 @@ class Level(Lvl):
                         self.bullets.add(p)
                         self.sprites.add(p)
 
+                if event.button == 3:
+                    mousex, mousey = pygame.mouse.get_pos()
+                    angle = getAngle(self.player.rect.x, self.player.rect.y, mousex, mousey)
+
+                    p = self.player.secondaryShoot(angle)
+                    if p:
+                        self.bullets.add(p)
+                        self.sprites.add(p)
+
             self.player.control(event)
 
             if event.type == pygame.KEYDOWN:
