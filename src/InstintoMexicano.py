@@ -2,13 +2,13 @@
 #This file is the main entry point
 
 
-from GoatEngine.StateMachine import StateMachine
+from GoatEngine.Engine import StateMachine, GameState
 
 
 def main():
-    game = StateMachine("Plateform Jumper")
+    game = StateMachine("Instinto Mexicano")
     game.init()
-    #game.addState(None)
+    game.addState(GameState())
     game.run()
 
 

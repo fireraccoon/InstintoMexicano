@@ -2,6 +2,7 @@ from abc import ABCMeta
 from abc import abstractmethod
 import pygame
 from GoatEngine import Config
+from GoatEngine.SimpleClock import Clock
 
 
 class StateMachine():
@@ -9,10 +10,11 @@ class StateMachine():
         self.isRunning = False  # Whether or not the engine is running
         self.states = []  # A list of states
 
-        self.clock = None
-        self.screen = None
+        self.clock = None   # The FPS Clock
+        self.screen = None  # The screen (Pygame Surface Object)
+        self.title = title  # The title of the Window
 
-        self.title = title
+
 
     @staticmethod
     def log(message):
@@ -28,12 +30,27 @@ class StateMachine():
         StateMachine.log("Init")
         pygame.init()
         self.isRunning = True
+
+        # Clocks
         self.clock = pygame.time.Clock()
 
         # Graphical Interface
         StateMachine.log("Init::GUI Initialisation")
-        self.screen = pygame.display.set_mode([Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT])
         pygame.display.set_caption(self.title)
+        self.screen = pygame.display.set_mode([Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT])
+
+        # DETECT VIDEO MODES
+        #modes = pygame.display.list_modes(16)
+        #if not modes:
+        #    StateMachine.log('16bit not supported')
+        #else:
+        #    StateMachine.log('Found Resolution:')
+        #    pygame.display.set_mode(modes[1], pygame.FULLSCREEN, 16)
+
+
+
+
+
 
 
     def cleanUp(self):
@@ -97,33 +114,65 @@ class StateMachine():
         except IndexError:
             raise EmptyMachineException("State Machine has no event in queue")
 
-    def update(self):
+    def update(self, delta):
         """ Update logic for the current state
+        :param delta: delta time
         """
         try:
-            self.states[-1].update(self)
+            self.states[-1].update(self, delta)
         except IndexError:
             raise EmptyMachineException("State Machine has no event in queue")
 
     def draw(self):
         """ Renders graphics for the current state
         """
+
+        self.screen.fill((0, 0, 0))
         try:
             self.states[-1].draw(self)
         except IndexError:
             raise EmptyMachineException("State Machine has no event in queue")
 
+        if Config.DISPLAY_FRAME_RATE:
+            self.drawText("FPS: {0:.2f}".format(self.clock.get_fps()))
+
+        pygame.display.flip()  # Update Screen
+
+
+
+
+    def drawText(self, text, x=20, y=20):
+        """ Renders text on screen
+        :param text: the text to display
+        """
+        font = pygame.font.SysFont('Arial', 18, bold=True)
+        surface = font.render(text, True, (255, 255, 255))
+        self.screen.blit(surface, (x, y))
+
+
+
     def run(self):
         """ Puts the engine in its mainloop
         """
         while self.isRunning:
+
+            self.lastTick = pygame.time.get_ticks()
+
             self.handleEvents()
-            self.update()
+
+            self.update(self.lastTick)
+
             self.draw()
-            pygame.display.flip()
-            self.clock.tick(60)
+            self.clock.tick(Config.FRAMES_PER_SECONDS)
+
+
+
 
         pygame.quit()
+
+
+
+
 
 
 class GameState():
@@ -150,7 +199,7 @@ class GameState():
         pass
 
     @abstractmethod
-    def update(self, engine):
+    def update(self, engine, delta):
         """ Update logic for the current state
         :param engine: a reference to the game Engine
         """
@@ -185,6 +234,16 @@ class GameState():
 
 
 
+
+
+
+
+
+
+
+################
+# EXCEPTIONS
+################
 
 class EmptyMachineException(Exception):
     """ Raised when the StateMachine is Empty (having no state in its list)
