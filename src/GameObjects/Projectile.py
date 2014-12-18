@@ -1,8 +1,8 @@
-import pygame
 import math
 
+import pygame
+
 from Colors import Colors
-from Direction import Direction
 from GameObjects.GameObject import GameObject
 
 

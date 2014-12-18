@@ -1,5 +1,5 @@
 
-# GEt angle between 2 points
+# Get angle between 2 points
 import math
 
 
