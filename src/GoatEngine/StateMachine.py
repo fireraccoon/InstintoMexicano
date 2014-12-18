@@ -4,7 +4,7 @@ import pygame
 from GoatEngine import Config
 
 
-class Engine():
+class StateMachine():
     def __init__(self, title):
         self.isRunning = False  # Whether or not the engine is running
         self.states = []  # A list of states
@@ -25,13 +25,13 @@ class Engine():
     def init(self):
         """ Initialises the Engine
         """
-        Engine.log("Init")
+        StateMachine.log("Init")
         pygame.init()
         self.isRunning = True
         self.clock = pygame.time.Clock()
 
         # Graphical Interface
-        Engine.log("Init::GUI Initialisation")
+        StateMachine.log("Init::GUI Initialisation")
         self.screen = pygame.display.set_mode([Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT])
         pygame.display.set_caption(self.title)
 
@@ -39,12 +39,12 @@ class Engine():
     def cleanUp(self):
         """ Does necessary clean ups of the engine
         """
-        Engine.log("Cleaning up...")
+        StateMachine.log("Cleaning up...")
 
     def exit(self):
         """ Exits the engine in a clean way
         """
-        Engine.log("Exiting...")
+        StateMachine.log("Exiting...")
         self.isRunning = False
 
     def exitWithError(self, errorMessage):
@@ -182,3 +182,20 @@ class GameState():
         :return:
         """
         pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
