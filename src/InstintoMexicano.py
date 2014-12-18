@@ -2,16 +2,13 @@
 #This file is the main entry point
 
 
-from GoatEngine import Engine
-from Levels.Level_01 import Level
-
-
+from GoatEngine.StateMachine import StateMachine
 
 
 def main():
-    game = Engine("Plateform Jumper", True)
+    game = StateMachine("Plateform Jumper")
     game.init()
-    game.addState(Level())
+    #game.addState(None)
     game.run()
 
 

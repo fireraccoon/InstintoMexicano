@@ -91,27 +91,27 @@ class StateMachine():
     def handleEvents(self):
         """ Handle user inputs for the current state
         """
-        if self.states:
+
+        try:
             self.states[-1].handleEvents(self, pygame.event.get())
-        else:
-            self.exitWithError("has no event in queue")
+        except IndexError:
+            raise EmptyMachineException("State Machine has no event in queue")
 
     def update(self):
         """ Update logic for the current state
         """
-        if self.states:
+        try:
             self.states[-1].update(self)
-
-        else:
-            self.exitWithError("has no event in queue")
+        except IndexError:
+            raise EmptyMachineException("State Machine has no event in queue")
 
     def draw(self):
         """ Renders graphics for the current state
         """
-        if self.states:
+        try:
             self.states[-1].draw(self)
-        else:
-            self.exitWithError("has no event in queue")
+        except IndexError:
+            raise EmptyMachineException("State Machine has no event in queue")
 
     def run(self):
         """ Puts the engine in its mainloop
@@ -186,9 +186,13 @@ class GameState():
 
 
 
-
-
-
+class EmptyMachineException(Exception):
+    """ Raised when the StateMachine is Empty (having no state in its list)
+    """
+    def __init__(self, arg):
+        self.msg = arg
+    def __str__(self):
+        return repr(self.msg)
 
 
 
