@@ -1,8 +1,9 @@
 from abc import ABCMeta
 from abc import abstractmethod
+
 import pygame
+
 from GoatEngine import Config
-from GoatEngine.SimpleClock import Clock
 
 
 class StateMachine():
@@ -13,8 +14,6 @@ class StateMachine():
         self.clock = None   # The FPS Clock
         self.screen = None  # The screen (Pygame Surface Object)
         self.title = title  # The title of the Window
-
-
 
     @staticmethod
     def log(message):
@@ -47,12 +46,6 @@ class StateMachine():
         #    StateMachine.log('Found Resolution:')
         #    pygame.display.set_mode(modes[1], pygame.FULLSCREEN, 16)
 
-
-
-
-
-
-
     def cleanUp(self):
         """ Does necessary clean ups of the engine
         """
@@ -82,18 +75,15 @@ class StateMachine():
         self.states.append(newState)
         self.states[-1].init(self)
 
-
     def addState(self, newState):
         """ PAUSES the current state if any and switch to the new one
         :param newState: the new state
         """
-
         if self.states:
             self.states[-1].pause(self)
 
         self.states.append(newState)
         self.states[-1].init(self)
-
 
     def popState(self):
         """  KILLS the current state and switch to the last one remaining if any """
@@ -138,9 +128,6 @@ class StateMachine():
 
         pygame.display.flip()  # Update Screen
 
-
-
-
     def drawText(self, text, x=20, y=20):
         """ Renders text on screen
         :param text: the text to display
@@ -148,8 +135,6 @@ class StateMachine():
         font = pygame.font.SysFont('Arial', 18, bold=True)
         surface = font.render(text, True, (255, 255, 255))
         self.screen.blit(surface, (x, y))
-
-
 
     def run(self):
         """ Puts the engine in its mainloop
@@ -165,14 +150,7 @@ class StateMachine():
             self.draw()
             self.clock.tick(Config.FRAMES_PER_SECONDS)
 
-
-
-
         pygame.quit()
-
-
-
-
 
 
 class GameState():
@@ -233,14 +211,6 @@ class GameState():
         pass
 
 
-
-
-
-
-
-
-
-
 ################
 # EXCEPTIONS
 ################
@@ -250,15 +220,6 @@ class EmptyMachineException(Exception):
     """
     def __init__(self, arg):
         self.msg = arg
+
     def __str__(self):
         return repr(self.msg)
-
-
-
-
-
-
-
-
-
-

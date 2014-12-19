@@ -2,13 +2,14 @@
 #This file is the main entry point
 
 
-from GoatEngine.Engine import StateMachine, GameState
+from GoatEngine.Engine import StateMachine
+from Scenes.PlayGroundScene import PlayGroundScene
 
 
 def main():
     game = StateMachine("Instinto Mexicano")
     game.init()
-    game.addState(GameState())
+    game.addState(PlayGroundScene())
     game.run()
 
 
